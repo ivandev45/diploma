@@ -28,7 +28,6 @@ public class FrontController {
     public ResponseEntity<byte[]> getImage(@PathVariable String fileName,
                                    @RequestParam String userId,
                                    @RequestParam String pwdHash) throws IOException {
-        System.out.println("HERE------------------");
         log.info("request : fileName -> {}, userId -> {}, passwordHash -> {}", fileName, userId, pwdHash);
         return new ResponseEntity(mediaService.getImage(fileName, userId, pwdHash), HttpStatus.OK);
     }
